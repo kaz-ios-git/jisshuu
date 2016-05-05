@@ -14,6 +14,7 @@
 		6E1213751CDB138A006CE95D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1213731CDB138A006CE95D /* LaunchScreen.storyboard */; };
 		6E1213801CDB138A006CE95D /* myNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E12137F1CDB138A006CE95D /* myNotificationTests.swift */; };
 		6E12138B1CDB138A006CE95D /* myNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E12138A1CDB138A006CE95D /* myNotificationUITests.swift */; };
+		6E1213991CDB13E9006CE95D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1213981CDB13E9006CE95D /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6E1213861CDB138A006CE95D /* myNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E12138A1CDB138A006CE95D /* myNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myNotificationUITests.swift; sourceTree = "<group>"; };
 		6E12138C1CDB138A006CE95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E1213981CDB13E9006CE95D /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				6E1213711CDB138A006CE95D /* Assets.xcassets */,
 				6E1213731CDB138A006CE95D /* LaunchScreen.storyboard */,
 				6E1213761CDB138A006CE95D /* Info.plist */,
+				6E1213981CDB13E9006CE95D /* Notification.swift */,
 			);
 			path = myNotification;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				6E12136D1CDB138A006CE95D /* ViewController.swift in Sources */,
 				6E12136B1CDB138A006CE95D /* AppDelegate.swift in Sources */,
+				6E1213991CDB13E9006CE95D /* Notification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
