@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var tmp: NSDate!
+    var tmp: weeklyNotification!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func testButton(sender: AnyObject) {
-        tmp = RegistNotificationDaily(CreateNSDate(year: 2016, month: 5, day: 5, hour: 0, minute: 0, second: 70), body: "hello", action_name: "open")
+        tmp = weeklyNotification(date: CreateWeeklyNSDate(Weekdays.Fri.rawValue, hour: 0, minute: 0, second: 0), body: "hello", action_name: "open")
+        tmp.regist()
     }
     
     @IBAction func testButton2(sender: AnyObject) {
@@ -32,9 +33,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tesuButton3(sender: AnyObject) {
-        DeleteNotification(tmp)
+        tmp?.delete()
     }
     
+    @IBAction func testButton4(sender: AnyObject) {
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+    }
     
 }
 
