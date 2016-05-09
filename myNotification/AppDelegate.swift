@@ -27,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        let alert = UIAlertView();
-        alert.title = "通知があります";
-        alert.message = notification.alertBody;
-        alert.addButtonWithTitle(notification.alertAction!);
-        alert.show();
+        let alert = UIAlertView()
+        alert.title = "通知があります"
+        alert.message = notification.alertBody
+        alert.addButtonWithTitle("OK")
+        alert.show()
         if application.applicationState != .Active{
             application.applicationIconBadgeNumber = 0
             application.cancelLocalNotification(notification)

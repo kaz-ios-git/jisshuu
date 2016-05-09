@@ -90,8 +90,8 @@ public func CreateNSDate(year year: Int = 1970, month: Int = 1, day : Int = 1, h
 }
 
 
-public func CreateWeeklyNSDate(Weekday: Int, hour: Int = 0, minute :Int = 0, second : Int = 0) -> NSDate{
+public func CreateWeeklyNSDate(Weekdays Weekdays: Int, hour: Int = 0, minute :Int = 0, second : Int = 0) -> NSDate{
     let calender = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-    return (calender!.dateWithEra(1, year: 1970, month: 1, day: 1 + Weekday, hour: hour, minute: minute, second: second, nanosecond: 0))!
+    return (calender!.dateWithEra(1, year: 1970, month: 1, day: 1 + Weekdays, hour: hour, minute: minute, second: second, nanosecond: 0))!
 }
 

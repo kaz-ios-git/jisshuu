@@ -14,44 +14,105 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POg-vI-T0a">
-                                <rect key="frame" x="184" y="171" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="26" y="214" width="102" height="30"/>
+                                <state key="normal" title="set notification"/>
                                 <connections>
                                     <action selector="testButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79Q-KH-Gnl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lH0-6U-Qzz">
-                                <rect key="frame" x="184" y="253" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="163" y="214" width="125" height="30"/>
+                                <state key="normal" title="show notifications"/>
                                 <connections>
                                     <action selector="testButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OzL-ky-OSE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nu-uj-9eM">
+                                <rect key="frame" x="20" y="307" width="280" height="223"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs8-kE-CqA">
-                                <rect key="frame" x="184" y="332" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="204" y="269" width="43" height="30"/>
+                                <state key="normal" title="delete"/>
                                 <connections>
                                     <action selector="tesuButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MW4-eT-mHa"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2016" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hzk-pL-9X5">
+                                <rect key="frame" x="20" y="43" width="69" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="year"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSu-tE-Trb">
+                                <rect key="frame" x="140" y="43" width="40" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="month"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HU7-So-0x2">
+                                <rect key="frame" x="232" y="43" width="41" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="day"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k6k-M4-KkJ">
+                                <rect key="frame" x="31" y="138" width="47" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="hour"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GT5-x5-HTL">
+                                <rect key="frame" x="136" y="138" width="48" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="minute"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcT-WK-uFf">
+                                <rect key="frame" x="232" y="138" width="41" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="second"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iy2-DY-eDJ">
-                                <rect key="frame" x="184" y="400" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="46" y="269" width="62" height="30"/>
+                                <state key="normal" title="delete all"/>
                                 <connections>
                                     <action selector="testButton4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D2M-3J-ry1"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mh4-1C-qwY" appends="YES" id="YOc-Uo-QM9"/>
+                        </connections>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="Lday" destination="HU7-So-0x2" id="JNr-ke-fY2"/>
+                        <outlet property="Lhour" destination="k6k-M4-KkJ" id="5mu-QV-fSL"/>
+                        <outlet property="Lminute" destination="GT5-x5-HTL" id="IW0-GA-f1s"/>
+                        <outlet property="Lmonth" destination="pSu-tE-Trb" id="vJw-av-Lx2"/>
+                        <outlet property="Lsecond" destination="dcT-WK-uFf" id="TNl-NA-OmG"/>
+                        <outlet property="Lyear" destination="Hzk-pL-9X5" id="4Ds-fM-xcF"/>
+                        <outlet property="mylabel" destination="5Nu-uj-9eM" id="JYo-98-u6T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mh4-1C-qwY">
+                    <connections>
+                        <action selector="mytapscreen:" destination="BYZ-38-t0r" id="9vf-8Y-Uc7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="245" y="240"/>
         </scene>
     </scenes>
 </document>
