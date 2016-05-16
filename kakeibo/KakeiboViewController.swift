@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class KakeiboViewController: UIViewController {
 
     @IBOutlet weak var dateTextfield: UITextField!
     var toolBar: UIToolbar!
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         datepicker = UIDatePicker()
         dateTextfield.inputView = datepicker
-        datepicker.addTarget(self, action: #selector(ViewController.changedDateEvent(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        datepicker.addTarget(self, action: #selector(KakeiboViewController.changedDateEvent(_:)), forControlEvents: UIControlEvents.ValueChanged)
         datepicker.locale = NSLocale(localeIdentifier: "ja_JP")
         datepicker.datePickerMode = UIDatePickerMode.Date
         
@@ -28,8 +28,8 @@ class ViewController: UIViewController {
         toolBar.tintColor = UIColor.blueColor()
         toolBar.backgroundColor = UIColor.whiteColor()
         
-        let toolBarBtnDone = UIBarButtonItem(title: "完了", style: .Bordered, target: self, action: #selector(ViewController.tappedToolBarBtn(_:)))
-        let toolBarBtnToday = UIBarButtonItem(title: "今日", style: .Bordered, target: self, action: #selector(ViewController.tappedToolBarBtnToday(_:)))
+        let toolBarBtnDone = UIBarButtonItem(title: "完了", style: .Bordered, target: self, action: #selector(KakeiboViewController.tappedToolBarBtn(_:)))
+        let toolBarBtnToday = UIBarButtonItem(title: "今日", style: .Bordered, target: self, action: #selector(KakeiboViewController.tappedToolBarBtnToday(_:)))
         toolBarBtnDone.tag = 1
         toolBar.items = [toolBarBtnDone, toolBarBtnToday]
         

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6EE051A21CE952740090D643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE051A11CE952740090D643 /* AppDelegate.swift */; };
-		6EE051A41CE952740090D643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE051A31CE952740090D643 /* ViewController.swift */; };
+		6EE051A41CE952740090D643 /* KakeiboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE051A31CE952740090D643 /* KakeiboViewController.swift */; };
 		6EE051A71CE952740090D643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE051A51CE952740090D643 /* Main.storyboard */; };
 		6EE051A91CE952740090D643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EE051A81CE952740090D643 /* Assets.xcassets */; };
 		6EE051AC1CE952740090D643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE051AA1CE952740090D643 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		6EE0519E1CE952740090D643 /* kakeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kakeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE051A11CE952740090D643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6EE051A31CE952740090D643 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6EE051A31CE952740090D643 /* KakeiboViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakeiboViewController.swift; sourceTree = "<group>"; };
 		6EE051A61CE952740090D643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6EE051A81CE952740090D643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EE051AB1CE952740090D643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				6EE051A11CE952740090D643 /* AppDelegate.swift */,
-				6EE051A31CE952740090D643 /* ViewController.swift */,
+				6EE051A31CE952740090D643 /* KakeiboViewController.swift */,
 				6EE051A51CE952740090D643 /* Main.storyboard */,
 				6EE051A81CE952740090D643 /* Assets.xcassets */,
 				6EE051AA1CE952740090D643 /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EE051A41CE952740090D643 /* ViewController.swift in Sources */,
+				6EE051A41CE952740090D643 /* KakeiboViewController.swift in Sources */,
 				6EE051A21CE952740090D643 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +485,7 @@
 				6EE051C81CE952750090D643 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EE051C91CE952750090D643 /* Build configuration list for PBXNativeTarget "kakeiboTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +494,7 @@
 				6EE051CB1CE952750090D643 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EE051CC1CE952750090D643 /* Build configuration list for PBXNativeTarget "kakeiboUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +503,7 @@
 				6EE051CE1CE952750090D643 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
