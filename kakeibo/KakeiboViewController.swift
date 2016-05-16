@@ -8,11 +8,30 @@
 
 import UIKit
 
-class KakeiboViewController: UIViewController {
+class KakeiboViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var dateTextfield: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    
     var toolBar: UIToolbar!
     var datepicker: UIDatePicker!
+    let texts = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    var a:Kakeibo! = nil
+    
+    // セルの行数
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //return texts.count
+        a = Kakeibo()
+        return a.categories.count
+    }
+    
+    //セルの内容を変更
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        
+        cell.textLabel?.text = a.categories[indexPath.row]
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +53,9 @@ class KakeiboViewController: UIViewController {
         toolBar.items = [toolBarBtnDone, toolBarBtnToday]
         
         dateTextfield.inputAccessoryView = toolBar
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 

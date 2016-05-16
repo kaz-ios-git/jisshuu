@@ -14,6 +14,7 @@
 		6EE051AC1CE952740090D643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE051AA1CE952740090D643 /* LaunchScreen.storyboard */; };
 		6EE051B71CE952750090D643 /* kakeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE051B61CE952750090D643 /* kakeiboTests.swift */; };
 		6EE051C21CE952750090D643 /* kakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE051C11CE952750090D643 /* kakeiboUITests.swift */; };
+		6EE051E71CE990700090D643 /* Kakeibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE051E61CE990700090D643 /* Kakeibo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6EE051BD1CE952750090D643 /* kakeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kakeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE051C11CE952750090D643 /* kakeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakeiboUITests.swift; sourceTree = "<group>"; };
 		6EE051C31CE952750090D643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EE051E61CE990700090D643 /* Kakeibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kakeibo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				6EE051A11CE952740090D643 /* AppDelegate.swift */,
 				6EE051A31CE952740090D643 /* KakeiboViewController.swift */,
+				6EE051E61CE990700090D643 /* Kakeibo.swift */,
 				6EE051A51CE952740090D643 /* Main.storyboard */,
 				6EE051A81CE952740090D643 /* Assets.xcassets */,
 				6EE051AA1CE952740090D643 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EE051A41CE952740090D643 /* KakeiboViewController.swift in Sources */,
+				6EE051E71CE990700090D643 /* Kakeibo.swift in Sources */,
 				6EE051A21CE952740090D643 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
