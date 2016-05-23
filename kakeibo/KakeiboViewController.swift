@@ -15,22 +15,41 @@ class KakeiboViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var toolBar: UIToolbar!
     var datepicker: UIDatePicker!
-    let texts = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    var a:Kakeibo! = nil
+    var kakei:Kakeibo! = nil
+    var cat:String!
     
     // セルの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return texts.count
-        a = Kakeibo()
-        return a.categories.count
+        if (kakei == nil){
+            return 0
+        }else{
+            return kakei.categories.count
+        }
     }
     
     //セルの内容を変更
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        
-        cell.textLabel?.text = a.categories[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath)
+        let str = kakei.categories[indexPath.row]
+        cell.textLabel?.text = str
+        cell.detailTextLabel?.text = String(kakei.moneys[str]!)
         return cell
+    }
+    
+    //セルがタップされた
+    func tableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath)
+    {
+        cat = kakei.categories[indexPath.row]
+        performSegueWithIdentifier("toKakeiboSubViewController",sender: nil)
+    }
+    
+    //遷移の準備（値の受け渡し）
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier! == "toKakeiboSubViewController") {
+            let subVC: KakeiboSubViewController = (segue.destinationViewController as? KakeiboSubViewController)!
+            subVC.kakei = kakei
+            subVC.cat = cat
+        }
     }
     
     override func viewDidLoad() {
@@ -54,8 +73,11 @@ class KakeiboViewController: UIViewController, UITableViewDataSource, UITableVie
         
         dateTextfield.inputAccessoryView = toolBar
         
+        dateTextfield.text = kakei?.date
+        //kakei = Kakeibo(date: dateToString(NSDate()))
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.reloadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -64,18 +86,24 @@ class KakeiboViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    //"完了"のボタンが押された
     func tappedToolBarBtn(sender: UIBarButtonItem) {
         dateTextfield.resignFirstResponder()
+        kakei = Kakeibo(date: dateToString(datepicker.date))
+        tableView.reloadData()
     }
     
+    //"今日"のボタンが押された
     func tappedToolBarBtnToday(sender: UIBarButtonItem) {
         datepicker.date = NSDate()
         changedDateEvent(datepicker)
     }
     
+    //日付が変更された
     func changedDateEvent(sender: UIDatePicker){
         dateTextfield.text = dateToString(datepicker.date)
     }
+    
     
     func dateToString(date:NSDate) ->String {
         let date_formatter: NSDateFormatter = NSDateFormatter();

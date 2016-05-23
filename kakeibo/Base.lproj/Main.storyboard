@@ -27,7 +27,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dtG-z6-v4f">
-                                <rect key="frame" x="20" y="88" width="280" height="30"/>
+                                <rect key="frame" x="117" y="88" width="183" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="204" width="320" height="344"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="qwY-3I-pcR" detailTextLabel="Dly-Pm-Jdd" style="IBUITableViewCellStyleValue1" id="ilw-60-oJX">
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" textLabel="qwY-3I-pcR" detailTextLabel="Dly-Pm-Jdd" style="IBUITableViewCellStyleValue1" id="ilw-60-oJX">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ilw-60-oJX" id="Vge-5o-fHU">
@@ -61,6 +61,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日付を選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBv-UC-mp9">
+                                <rect key="frame" x="20" y="92" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -68,11 +74,80 @@
                     <connections>
                         <outlet property="dateTextfield" destination="dtG-z6-v4f" id="Qm3-Ol-ET6"/>
                         <outlet property="tableView" destination="IkA-E2-PnT" id="umQ-a9-Yf9"/>
+                        <segue destination="jk5-1h-nOC" kind="presentation" identifier="toKakeiboSubViewController" id="key-p1-ptM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="315"/>
+            <point key="canvasLocation" x="171" y="328"/>
+        </scene>
+        <!--Kakeibo Sub View Controller-->
+        <scene sceneID="LJf-9D-bgZ">
+            <objects>
+                <viewController id="jk5-1h-nOC" customClass="KakeiboSubViewController" customModule="kakeibo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vVg-oa-S0z"/>
+                        <viewControllerLayoutGuide type="bottom" id="UXC-yA-6DV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WVd-d1-DCC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ctr-rk-mIu">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="DLf-HR-rst">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="W9O-pg-b1V">
+                                            <connections>
+                                                <action selector="backButton:" destination="jk5-1h-nOC" id="VSt-Cw-4rQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金額を入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oH-en-glW">
+                                <rect key="frame" x="20" y="120" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvN-Xe-T33">
+                                <rect key="frame" x="254" y="115" width="30" height="30"/>
+                                <state key="normal" title="OK!"/>
+                                <connections>
+                                    <action selector="endEdit:" destination="jk5-1h-nOC" eventType="touchUpInside" id="fVG-k5-BgC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Jc-Eu-Ftw">
+                                <rect key="frame" x="119" y="115" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" keyboardKey="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9aK-x6-Xsc" appends="YES" id="BIa-WX-JwJ"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="label1" destination="2oH-en-glW" id="l96-DL-TLz"/>
+                        <outlet property="mytextfield" destination="9Jc-Eu-Ftw" id="hud-Lj-q1r"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toKakeiboViewController" id="w65-bA-CYg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ejj-ET-E1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9aK-x6-Xsc">
+                    <connections>
+                        <action selector="tapscreen:" destination="jk5-1h-nOC" id="aOY-c9-U2P"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="601" y="328"/>
         </scene>
     </scenes>
 </document>
