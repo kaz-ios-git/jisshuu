@@ -62,7 +62,7 @@ class KakeiboViewController: UIViewController, UITableViewDataSource, UITableVie
         
         toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
-        toolBar.barStyle = .BlackTranslucent
+        toolBar.barStyle = .Default
         toolBar.tintColor = UIColor.blueColor()
         toolBar.backgroundColor = UIColor.whiteColor()
         
@@ -112,7 +112,7 @@ class KakeiboViewController: UIViewController, UITableViewDataSource, UITableVie
         let weekdays:Array  = ["", "日", "月", "火", "水", "木", "金", "土"]
         let calendar = NSCalendar.currentCalendar();
         let comps = calendar.components([.Year, .Month, .Day, .Weekday], fromDate: date);
-        date_formatter.dateFormat = "yyyy年MM月dd日（\(weekdays[comps.weekday]))"
+        date_formatter.dateFormat = "yyyy年MM月dd日(\(weekdays[comps.weekday]))"
         return date_formatter.stringFromDate(date)
     }
 }

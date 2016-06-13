@@ -14,9 +14,18 @@ class KakeiboSubViewController: UIViewController{
     var kakei:Kakeibo! = nil
     var cat:String!
     @IBOutlet var mytextfield: UITextField!
+    @IBOutlet var navibar: UINavigationBar!
+    @IBOutlet var year: UILabel!
+    @IBOutlet var month: UILabel!
+    @IBOutlet var week: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navibar.topItem?.title = kakei.date + ":" + cat
+        year.text = String(kakei.sumby(kakei.separate("年"), genre: cat))
+        month.text = String(kakei.sumby(kakei.separate("月"), genre: cat))
+        week.text = String(kakei.sumbyweek(cat))
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,8 +45,6 @@ class KakeiboSubViewController: UIViewController{
         let value = Int(str)
         if (value != nil) {
             kakei.moneys[cat] = value
-        }else {
-            kakei.moneys[cat] = 0
         }
         kakei.save_book()
         performSegueWithIdentifier("toKakeiboViewController",sender: nil)
