@@ -18,11 +18,10 @@ class Book:Object{
         return "date"
     }
     
-    /*
     override static func indexedProperties() -> [String] {
         return ["weekofyear"]
     }
- */
+    
 }
 
 class Cell:Object{
@@ -171,6 +170,43 @@ class Kakeibo {
         return result
     }
     
+    func searchByGenre(date:String, genre:String)->[String:Int]{
+        let realm = try! Realm()
+        var results:[String:Int] = [:]
+        let predicate = NSPredicate(format: "date CONTAINS %@", date)
+        let books = realm.objects(Book).filter(predicate)
+        
+        for book in books{
+            for cell in book.cells{
+                if(cell.genre == genre){
+                    results[book.date] = cell.money
+                }
+            }
+        }
+        return results
+    }
+    
+    func searchByGenreWeekly(genre:String, weekofyear:Int = -1)->[String:Int]{
+        let realm = try! Realm()
+        var results:[String:Int] = [:]
+        var woy = weekofyear
+        
+        if woy == -1{
+            woy = self.weekofyear
+        }
+        
+        let predicate = NSPredicate(format: "weekofyear == %d", woy)
+        let books = realm.objects(Book).filter(predicate)
+        
+        for book in books{
+            for cell in book.cells{
+                if(cell.genre == genre){
+                    results[book.date] = cell.money
+                }
+            }
+        }
+        return results
+    }
     /*
     func dateToString(date:NSDate) ->String {
         let date_formatter: NSDateFormatter = NSDateFormatter();

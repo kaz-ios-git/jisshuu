@@ -75,9 +75,11 @@ class KakeiboViewController: UIViewController, UITableViewDataSource, UITableVie
         
         dateTextfield.text = kakei?.date
         //kakei = Kakeibo(date: dateToString(NSDate()))
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
+ 
         // Do any additional setup after loading the view, typically from a nib.
     }
 
