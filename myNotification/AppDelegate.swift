@@ -24,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
-    
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         let alert = UIAlertView()
         alert.title = "通知があります"

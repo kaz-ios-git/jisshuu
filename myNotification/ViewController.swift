@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var tmp: Notification!
+    var tmp2: Notification!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,12 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    
     @IBAction func testButton(sender: AnyObject) {
+        /*通常の通知*/
         tmp = Notification(date: CreateNSDate(year: Int(Lyear.text!)!, month: Int(Lmonth.text!)!, day: Int(Lday.text!)!, hour: Int(Lhour.text!)!, minute: Int(Lminute.text!)!, second: Int(Lsecond.text!)!), body: "hello", action_name: "Open")
+        
+        //週ごとの通知
+        tmp2 = Notification(date: CreateWeeklyNSDate(Weekdays: Weekdays.Fri.rawValue), body: "通知内容", action_name: "open")
         tmp.regist()
        
     }
